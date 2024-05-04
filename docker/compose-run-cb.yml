@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  arucotag:
+    build: 
+      context: .  
+      dockerfile: Dockerfile
+    image: ohin112/l4t-ubuntu20-yolo:cb
+    container_name: cb_run
+    tty: true  
+    network_mode: host
+    privileged: true
+    cpuset: "0-2"
+    runtime: nvidia
+
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+      - ../extraction-ws:/home/realsense-ws
+      - ../startup:/home/startup
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    devices:
+      - /dev/bus/usb
+    
+    command: bash
+      # /bin/bash -c "cd /home/startup/diff; ./diff-inspection.sh"
