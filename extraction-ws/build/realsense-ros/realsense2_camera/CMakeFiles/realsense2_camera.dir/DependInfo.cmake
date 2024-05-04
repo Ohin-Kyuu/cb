@@ -12,6 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
+  "ELPP_NO_DEFAULT_LOG_FILE"
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"realsense2_camera\""
@@ -23,8 +24,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/realsense-ws/devel/include"
   "/home/realsense-ws/src/realsense-ros/realsense2_camera/include"
-  "/opt/ros/noetic/include"
   "/home/realsense-ws/src/ddynamic_reconfigure/include"
+  "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/opencv4"
   )

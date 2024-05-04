@@ -1,9 +1,6 @@
 version: '3.8'
 services:
   arucotag:
-    build: 
-      context: .  
-      dockerfile: Dockerfile
     image: ohin112/l4t-ubuntu20-yolo:cb
     container_name: cb_run
     tty: true  

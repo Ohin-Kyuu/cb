@@ -3,22 +3,15 @@ FROM ohin112/l4t-ubuntu20-yolo:ultralytics-ros_noetic
 
 LABEL org.opencontainers.image.authors="ohin"
 
-ENV SHELL /bin/bash
-
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     python3-pip \
     python3-rosdep
 
-WORKDIR /root/realsense-ws
-RUN git clone https://github.com/HungPinChiu/Vison-CB_workspace.git src && \
-    apt update && \
-    rosdep init && \
-    rosdep update && \
-    rosdep install --from-paths . --ignore-src -r -y && \
-    /bin/bash -c 'source /opt/ros/$ROS_DISTRO/setup.bash; catkin_make' && \
-    rm -rf /var/lib/apt/lists/* 
+RUN echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/aarch64-linux-gnu/tegra/' >> $HOME/.bashrc
 
+ENV SHELL /bin/bash
 SHELL ["/bin/bash","-ic"]
 
 
 
+q

@@ -4,7 +4,7 @@ services:
     build: 
       context: .  
       dockerfile: Dockerfile
-    image: ohin112/l4t-ubuntu20-yolo:try
+    image: ohin112/l4t-ubuntu20-yolo:cb
     container_name: build
     tty: true
     privileged: true
