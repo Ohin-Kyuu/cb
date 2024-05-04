@@ -16,6 +16,7 @@ services:
       - ../extraction-ws:/home/extraction-ws
       - ../realsense-ws:/home/realsense-ws
       - ../startup:/home/startup
+      - ../system/.bashrc:/root/.bashrc:rw
 
     environment:
       - DISPLAY=${DISPLAY}

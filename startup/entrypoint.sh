@@ -43,9 +43,10 @@ run_script_with_delay "/home/startup/task/cb-cam.sh" 30
 
 echo -e "Starting \e[1mTF\e[0m node ..."
 sleep 1
-run_script_with_delay "/home/startup/task/cb-tf.sh" 10
+run_script_with_delay "/home/startup/task/cb-tf.sh" 5
 
 echo -e "Starting \e[1mYOLO\e[0m node ..."
+run_script_with_delay "/home/startup/task/cb-yolo.sh" 1
 
 wait
 echo "All scheduled scripts have completed."

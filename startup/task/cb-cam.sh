@@ -4,7 +4,7 @@
 # Usage: ./script_name.sh [-c camera_name] [-s serial_no] [-f] [-j path_to_json]
 
 ### Default settings
-camera="cb"
+camera="cbcam"
 serial_no="215222079970"
 
 # Parse command line arguments
