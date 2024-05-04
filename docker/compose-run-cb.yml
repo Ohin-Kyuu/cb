@@ -13,7 +13,8 @@ services:
       - /dev/bus/usb:/dev/bus/usb
       - /tmp/.X11-unix:/tmp/.X11-unix
 
-      - ../extraction-ws:/home/realsense-ws
+      - ../extraction-ws:/home/extraction-ws
+      - ../realsense-ws:/home/realsense-ws
       - ../startup:/home/startup
 
     environment:

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/realsense-ws/src/yolo/src/six_marker.cpp
+/home/extraction-ws/src/yolo/src/six_marker.cpp
 ros/ros.h
 -
 geometry_msgs/PointStamped.h

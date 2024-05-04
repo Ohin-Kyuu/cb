@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/realsense-ws/src
+CMAKE_SOURCE_DIR = /home/extraction-ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/realsense-ws/build
+CMAKE_BINARY_DIR = /home/extraction-ws/build
 
 # Include any dependencies generated for this target.
 include yolo/CMakeFiles/sixregion_map.dir/depend.make
@@ -58,17 +58,17 @@ include yolo/CMakeFiles/sixregion_map.dir/progress.make
 include yolo/CMakeFiles/sixregion_map.dir/flags.make
 
 yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o: yolo/CMakeFiles/sixregion_map.dir/flags.make
-yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o: /home/realsense-ws/src/yolo/src/sixregion_map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/realsense-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o"
-	cd /home/realsense-ws/build/yolo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o -c /home/realsense-ws/src/yolo/src/sixregion_map.cpp
+yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o: /home/extraction-ws/src/yolo/src/sixregion_map.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o"
+	cd /home/extraction-ws/build/yolo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o -c /home/extraction-ws/src/yolo/src/sixregion_map.cpp
 
 yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.i"
-	cd /home/realsense-ws/build/yolo && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/realsense-ws/src/yolo/src/sixregion_map.cpp > CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.i
+	cd /home/extraction-ws/build/yolo && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/extraction-ws/src/yolo/src/sixregion_map.cpp > CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.i
 
 yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.s"
-	cd /home/realsense-ws/build/yolo && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/realsense-ws/src/yolo/src/sixregion_map.cpp -o CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.s
+	cd /home/extraction-ws/build/yolo && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/extraction-ws/src/yolo/src/sixregion_map.cpp -o CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.s
 
 # Object files for target sixregion_map
 sixregion_map_OBJECTS = \
@@ -77,44 +77,44 @@ sixregion_map_OBJECTS = \
 # External object files for target sixregion_map
 sixregion_map_EXTERNAL_OBJECTS =
 
-/home/realsense-ws/devel/lib/yolo/sixregion_map: yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o
-/home/realsense-ws/devel/lib/yolo/sixregion_map: yolo/CMakeFiles/sixregion_map.dir/build.make
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libtf.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libtf2_ros.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libactionlib.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libmessage_filters.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libroscpp.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libpthread.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_chrono.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libxmlrpcpp.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libtf2.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/librosconsole.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/librosconsole_log4cxx.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_regex.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/librostime.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_date_time.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libcpp_common.so
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_system.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_thread.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
-/home/realsense-ws/devel/lib/yolo/sixregion_map: yolo/CMakeFiles/sixregion_map.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/realsense-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/realsense-ws/devel/lib/yolo/sixregion_map"
-	cd /home/realsense-ws/build/yolo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sixregion_map.dir/link.txt --verbose=$(VERBOSE)
+/home/extraction-ws/devel/lib/yolo/sixregion_map: yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o
+/home/extraction-ws/devel/lib/yolo/sixregion_map: yolo/CMakeFiles/sixregion_map.dir/build.make
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libtf.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libtf2_ros.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libactionlib.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libmessage_filters.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libroscpp.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libpthread.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_chrono.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libtf2.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/librosconsole.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_regex.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/librostime.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_date_time.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /opt/ros/noetic/lib/libcpp_common.so
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_system.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libboost_thread.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/sixregion_map: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
+/home/extraction-ws/devel/lib/yolo/sixregion_map: yolo/CMakeFiles/sixregion_map.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/extraction-ws/devel/lib/yolo/sixregion_map"
+	cd /home/extraction-ws/build/yolo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sixregion_map.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-yolo/CMakeFiles/sixregion_map.dir/build: /home/realsense-ws/devel/lib/yolo/sixregion_map
+yolo/CMakeFiles/sixregion_map.dir/build: /home/extraction-ws/devel/lib/yolo/sixregion_map
 
 .PHONY : yolo/CMakeFiles/sixregion_map.dir/build
 
 yolo/CMakeFiles/sixregion_map.dir/clean:
-	cd /home/realsense-ws/build/yolo && $(CMAKE_COMMAND) -P CMakeFiles/sixregion_map.dir/cmake_clean.cmake
+	cd /home/extraction-ws/build/yolo && $(CMAKE_COMMAND) -P CMakeFiles/sixregion_map.dir/cmake_clean.cmake
 .PHONY : yolo/CMakeFiles/sixregion_map.dir/clean
 
 yolo/CMakeFiles/sixregion_map.dir/depend:
-	cd /home/realsense-ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/realsense-ws/src /home/realsense-ws/src/yolo /home/realsense-ws/build /home/realsense-ws/build/yolo /home/realsense-ws/build/yolo/CMakeFiles/sixregion_map.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/extraction-ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/extraction-ws/src /home/extraction-ws/src/yolo /home/extraction-ws/build /home/extraction-ws/build/yolo /home/extraction-ws/build/yolo/CMakeFiles/sixregion_map.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : yolo/CMakeFiles/sixregion_map.dir/depend
 

@@ -1,2 +1,2 @@
 yolo
--DCATKIN_DEVEL_PREFIX=/home/realsense-ws/devel -DCMAKE_INSTALL_PREFIX=/home/realsense-ws/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/extraction-ws/devel -DCMAKE_INSTALL_PREFIX=/home/extraction-ws/install -G Unix Makefiles

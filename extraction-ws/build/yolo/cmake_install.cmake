@@ -1,8 +1,8 @@
-# Install script for directory: /home/realsense-ws/src/yolo
+# Install script for directory: /home/extraction-ws/src/yolo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/realsense-ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/extraction-ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,37 +38,37 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolo/cmake" TYPE FILE FILES "/home/realsense-ws/build/yolo/catkin_generated/installspace/yolo-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolo/cmake" TYPE FILE FILES "/home/extraction-ws/build/yolo/catkin_generated/installspace/yolo-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/realsense-ws/devel/share/roseus/ros/yolo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/extraction-ws/devel/share/roseus/ros/yolo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/realsense-ws/devel/lib/python3/dist-packages/yolo")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/extraction-ws/devel/lib/python3/dist-packages/yolo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/realsense-ws/devel/lib/python3/dist-packages/yolo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/extraction-ws/devel/lib/python3/dist-packages/yolo")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/realsense-ws/build/yolo/catkin_generated/installspace/yolo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/extraction-ws/build/yolo/catkin_generated/installspace/yolo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolo/cmake" TYPE FILE FILES "/home/realsense-ws/build/yolo/catkin_generated/installspace/yolo-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolo/cmake" TYPE FILE FILES "/home/extraction-ws/build/yolo/catkin_generated/installspace/yolo-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolo/cmake" TYPE FILE FILES
-    "/home/realsense-ws/build/yolo/catkin_generated/installspace/yoloConfig.cmake"
-    "/home/realsense-ws/build/yolo/catkin_generated/installspace/yoloConfig-version.cmake"
+    "/home/extraction-ws/build/yolo/catkin_generated/installspace/yoloConfig.cmake"
+    "/home/extraction-ws/build/yolo/catkin_generated/installspace/yoloConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolo" TYPE FILE FILES "/home/realsense-ws/src/yolo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/yolo" TYPE FILE FILES "/home/extraction-ws/src/yolo/package.xml")
 endif()
 

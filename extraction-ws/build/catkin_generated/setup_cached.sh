@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/realsense-ws/build'
+export CMAKE_PREFIX_PATH="/home/extraction-ws/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/extraction-ws/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/extraction-ws/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/extraction-ws/src:$ROS_PACKAGE_PATH"

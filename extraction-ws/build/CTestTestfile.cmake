@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/realsense-ws/src
-# Build directory: /home/realsense-ws/build
+# Source directory: /home/extraction-ws/src
+# Build directory: /home/extraction-ws/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

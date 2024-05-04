@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/realsense-ws/devel/setup.sh
+    local-name: /home/extraction-ws/devel/setup.sh

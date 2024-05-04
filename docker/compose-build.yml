@@ -14,11 +14,15 @@ services:
       - DISPLAY=${DISPLAY} 
 
     volumes:
-      - ../extraction-ws:/home/realsense-ws
+      - ../extraction-ws:/home/extraction-ws
+      - ../realsense-ws:/home/realsense-ws
       - ../startup:/home/startup
 
     command: >
       /bin/bash -ic "
-      cd /home/realsense-ws
+      cd /home/extraction-ws 
+      && catkin_make
+      && chmod +x /home/extraction-ws/devel/*
+      && cd /home/realsense-ws 
       && catkin_make
       "

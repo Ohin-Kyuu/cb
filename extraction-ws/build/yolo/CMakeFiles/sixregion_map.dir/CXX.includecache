@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/realsense-ws/src/yolo/src/sixregion_map.cpp
+/home/extraction-ws/src/yolo/src/sixregion_map.cpp
 ros/ros.h
 -
 visualization_msgs/Marker.h

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/realsense-ws/devel/share/roseus/ros/yolo/manifest.l"
+  "/home/extraction-ws/devel/share/roseus/ros/yolo/manifest.l"
   "CMakeFiles/yolo_generate_messages_eus"
 )
 

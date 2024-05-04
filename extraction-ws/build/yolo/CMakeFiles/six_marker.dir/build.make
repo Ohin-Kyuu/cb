@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/realsense-ws/src
+CMAKE_SOURCE_DIR = /home/extraction-ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/realsense-ws/build
+CMAKE_BINARY_DIR = /home/extraction-ws/build
 
 # Include any dependencies generated for this target.
 include yolo/CMakeFiles/six_marker.dir/depend.make
@@ -58,17 +58,17 @@ include yolo/CMakeFiles/six_marker.dir/progress.make
 include yolo/CMakeFiles/six_marker.dir/flags.make
 
 yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.o: yolo/CMakeFiles/six_marker.dir/flags.make
-yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.o: /home/realsense-ws/src/yolo/src/six_marker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/realsense-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.o"
-	cd /home/realsense-ws/build/yolo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/six_marker.dir/src/six_marker.cpp.o -c /home/realsense-ws/src/yolo/src/six_marker.cpp
+yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.o: /home/extraction-ws/src/yolo/src/six_marker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.o"
+	cd /home/extraction-ws/build/yolo && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/six_marker.dir/src/six_marker.cpp.o -c /home/extraction-ws/src/yolo/src/six_marker.cpp
 
 yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/six_marker.dir/src/six_marker.cpp.i"
-	cd /home/realsense-ws/build/yolo && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/realsense-ws/src/yolo/src/six_marker.cpp > CMakeFiles/six_marker.dir/src/six_marker.cpp.i
+	cd /home/extraction-ws/build/yolo && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/extraction-ws/src/yolo/src/six_marker.cpp > CMakeFiles/six_marker.dir/src/six_marker.cpp.i
 
 yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/six_marker.dir/src/six_marker.cpp.s"
-	cd /home/realsense-ws/build/yolo && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/realsense-ws/src/yolo/src/six_marker.cpp -o CMakeFiles/six_marker.dir/src/six_marker.cpp.s
+	cd /home/extraction-ws/build/yolo && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/extraction-ws/src/yolo/src/six_marker.cpp -o CMakeFiles/six_marker.dir/src/six_marker.cpp.s
 
 # Object files for target six_marker
 six_marker_OBJECTS = \
@@ -77,44 +77,44 @@ six_marker_OBJECTS = \
 # External object files for target six_marker
 six_marker_EXTERNAL_OBJECTS =
 
-/home/realsense-ws/devel/lib/yolo/six_marker: yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.o
-/home/realsense-ws/devel/lib/yolo/six_marker: yolo/CMakeFiles/six_marker.dir/build.make
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libtf.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libtf2_ros.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libactionlib.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libmessage_filters.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libroscpp.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libpthread.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_chrono.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libxmlrpcpp.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libtf2.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/librosconsole.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/librosconsole_log4cxx.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_regex.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/librostime.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_date_time.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libcpp_common.so
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_system.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_thread.so.1.71.0
-/home/realsense-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
-/home/realsense-ws/devel/lib/yolo/six_marker: yolo/CMakeFiles/six_marker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/realsense-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/realsense-ws/devel/lib/yolo/six_marker"
-	cd /home/realsense-ws/build/yolo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/six_marker.dir/link.txt --verbose=$(VERBOSE)
+/home/extraction-ws/devel/lib/yolo/six_marker: yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.o
+/home/extraction-ws/devel/lib/yolo/six_marker: yolo/CMakeFiles/six_marker.dir/build.make
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libtf.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libtf2_ros.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libactionlib.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libmessage_filters.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libroscpp.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libpthread.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_chrono.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libtf2.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/librosconsole.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_regex.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/librostime.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_date_time.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/six_marker: /opt/ros/noetic/lib/libcpp_common.so
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_system.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libboost_thread.so.1.71.0
+/home/extraction-ws/devel/lib/yolo/six_marker: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
+/home/extraction-ws/devel/lib/yolo/six_marker: yolo/CMakeFiles/six_marker.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/extraction-ws/devel/lib/yolo/six_marker"
+	cd /home/extraction-ws/build/yolo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/six_marker.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-yolo/CMakeFiles/six_marker.dir/build: /home/realsense-ws/devel/lib/yolo/six_marker
+yolo/CMakeFiles/six_marker.dir/build: /home/extraction-ws/devel/lib/yolo/six_marker
 
 .PHONY : yolo/CMakeFiles/six_marker.dir/build
 
 yolo/CMakeFiles/six_marker.dir/clean:
-	cd /home/realsense-ws/build/yolo && $(CMAKE_COMMAND) -P CMakeFiles/six_marker.dir/cmake_clean.cmake
+	cd /home/extraction-ws/build/yolo && $(CMAKE_COMMAND) -P CMakeFiles/six_marker.dir/cmake_clean.cmake
 .PHONY : yolo/CMakeFiles/six_marker.dir/clean
 
 yolo/CMakeFiles/six_marker.dir/depend:
-	cd /home/realsense-ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/realsense-ws/src /home/realsense-ws/src/yolo /home/realsense-ws/build /home/realsense-ws/build/yolo /home/realsense-ws/build/yolo/CMakeFiles/six_marker.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/extraction-ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/extraction-ws/src /home/extraction-ws/src/yolo /home/extraction-ws/build /home/extraction-ws/build/yolo /home/extraction-ws/build/yolo/CMakeFiles/six_marker.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : yolo/CMakeFiles/six_marker.dir/depend
 

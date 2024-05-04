@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/realsense-ws/devel/lib/yolo/sixregion_map"
-  "/home/realsense-ws/devel/lib/yolo/sixregion_map.pdb"
+  "/home/extraction-ws/devel/lib/yolo/sixregion_map"
+  "/home/extraction-ws/devel/lib/yolo/sixregion_map.pdb"
   "CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o"
 )
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/realsense-ws/src
+CMAKE_SOURCE_DIR = /home/extraction-ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/realsense-ws/build
+CMAKE_BINARY_DIR = /home/extraction-ws/build
 
 # Utility rule file for yolo_gencpp.
 
@@ -63,10 +63,10 @@ yolo/CMakeFiles/yolo_gencpp.dir/build: yolo_gencpp
 .PHONY : yolo/CMakeFiles/yolo_gencpp.dir/build
 
 yolo/CMakeFiles/yolo_gencpp.dir/clean:
-	cd /home/realsense-ws/build/yolo && $(CMAKE_COMMAND) -P CMakeFiles/yolo_gencpp.dir/cmake_clean.cmake
+	cd /home/extraction-ws/build/yolo && $(CMAKE_COMMAND) -P CMakeFiles/yolo_gencpp.dir/cmake_clean.cmake
 .PHONY : yolo/CMakeFiles/yolo_gencpp.dir/clean
 
 yolo/CMakeFiles/yolo_gencpp.dir/depend:
-	cd /home/realsense-ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/realsense-ws/src /home/realsense-ws/src/yolo /home/realsense-ws/build /home/realsense-ws/build/yolo /home/realsense-ws/build/yolo/CMakeFiles/yolo_gencpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/extraction-ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/extraction-ws/src /home/extraction-ws/src/yolo /home/extraction-ws/build /home/extraction-ws/build/yolo /home/extraction-ws/build/yolo/CMakeFiles/yolo_gencpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : yolo/CMakeFiles/yolo_gencpp.dir/depend
 

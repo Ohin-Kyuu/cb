@@ -1,4 +1,4 @@
-prefix=/home/realsense-ws/devel
+prefix=/home/extraction-ws/devel
 
 Name: yolo
 Description: Description of yolo
