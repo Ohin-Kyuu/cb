@@ -168,19 +168,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-yolo/CMakeFiles/sixregion_map.dir/rule:
-	cd /home/extraction-ws/build && $(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/sixregion_map.dir/rule
-.PHONY : yolo/CMakeFiles/sixregion_map.dir/rule
+yolo/CMakeFiles/six_region_info.dir/rule:
+	cd /home/extraction-ws/build && $(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/six_region_info.dir/rule
+.PHONY : yolo/CMakeFiles/six_region_info.dir/rule
 
 # Convenience name for target.
-sixregion_map: yolo/CMakeFiles/sixregion_map.dir/rule
+six_region_info: yolo/CMakeFiles/six_region_info.dir/rule
 
-.PHONY : sixregion_map
+.PHONY : six_region_info
 
 # fast build rule for target.
-sixregion_map/fast:
-	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/sixregion_map.dir/build.make yolo/CMakeFiles/sixregion_map.dir/build
-.PHONY : sixregion_map/fast
+six_region_info/fast:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_info.dir/build.make yolo/CMakeFiles/six_region_info.dir/build
+.PHONY : six_region_info/fast
+
+# Convenience name for target.
+yolo/CMakeFiles/six_region_marker.dir/rule:
+	cd /home/extraction-ws/build && $(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/six_region_marker.dir/rule
+.PHONY : yolo/CMakeFiles/six_region_marker.dir/rule
+
+# Convenience name for target.
+six_region_marker: yolo/CMakeFiles/six_region_marker.dir/rule
+
+.PHONY : six_region_marker
+
+# fast build rule for target.
+six_region_marker/fast:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_marker.dir/build.make yolo/CMakeFiles/six_region_marker.dir/build
+.PHONY : six_region_marker/fast
 
 # Convenience name for target.
 yolo/CMakeFiles/yolo_genpy.dir/rule:
@@ -663,21 +678,6 @@ visualization_msgs_generate_messages_eus/fast:
 .PHONY : visualization_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-yolo/CMakeFiles/six_marker.dir/rule:
-	cd /home/extraction-ws/build && $(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/six_marker.dir/rule
-.PHONY : yolo/CMakeFiles/six_marker.dir/rule
-
-# Convenience name for target.
-six_marker: yolo/CMakeFiles/six_marker.dir/rule
-
-.PHONY : six_marker
-
-# fast build rule for target.
-six_marker/fast:
-	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_marker.dir/build.make yolo/CMakeFiles/six_marker.dir/build
-.PHONY : six_marker/fast
-
-# Convenience name for target.
 yolo/CMakeFiles/tf_generate_messages_lisp.dir/rule:
 	cd /home/extraction-ws/build && $(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/tf_generate_messages_lisp.dir/rule
 .PHONY : yolo/CMakeFiles/tf_generate_messages_lisp.dir/rule
@@ -736,6 +736,21 @@ actionlib_generate_messages_lisp: yolo/CMakeFiles/actionlib_generate_messages_li
 actionlib_generate_messages_lisp/fast:
 	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/build
 .PHONY : actionlib_generate_messages_lisp/fast
+
+# Convenience name for target.
+yolo/CMakeFiles/six_region_map.dir/rule:
+	cd /home/extraction-ws/build && $(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/six_region_map.dir/rule
+.PHONY : yolo/CMakeFiles/six_region_map.dir/rule
+
+# Convenience name for target.
+six_region_map: yolo/CMakeFiles/six_region_map.dir/rule
+
+.PHONY : six_region_map
+
+# fast build rule for target.
+six_region_map/fast:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_map.dir/build.make yolo/CMakeFiles/six_region_map.dir/build
+.PHONY : six_region_map/fast
 
 # Convenience name for target.
 yolo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
@@ -1127,59 +1142,86 @@ yolo_generate_messages_nodejs/fast:
 	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/yolo_generate_messages_nodejs.dir/build.make yolo/CMakeFiles/yolo_generate_messages_nodejs.dir/build
 .PHONY : yolo_generate_messages_nodejs/fast
 
-src/six_marker.o: src/six_marker.cpp.o
+src/six_region_info.o: src/six_region_info.cpp.o
 
-.PHONY : src/six_marker.o
-
-# target to build an object file
-src/six_marker.cpp.o:
-	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_marker.dir/build.make yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.o
-.PHONY : src/six_marker.cpp.o
-
-src/six_marker.i: src/six_marker.cpp.i
-
-.PHONY : src/six_marker.i
-
-# target to preprocess a source file
-src/six_marker.cpp.i:
-	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_marker.dir/build.make yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.i
-.PHONY : src/six_marker.cpp.i
-
-src/six_marker.s: src/six_marker.cpp.s
-
-.PHONY : src/six_marker.s
-
-# target to generate assembly for a file
-src/six_marker.cpp.s:
-	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_marker.dir/build.make yolo/CMakeFiles/six_marker.dir/src/six_marker.cpp.s
-.PHONY : src/six_marker.cpp.s
-
-src/sixregion_map.o: src/sixregion_map.cpp.o
-
-.PHONY : src/sixregion_map.o
+.PHONY : src/six_region_info.o
 
 # target to build an object file
-src/sixregion_map.cpp.o:
-	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/sixregion_map.dir/build.make yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.o
-.PHONY : src/sixregion_map.cpp.o
+src/six_region_info.cpp.o:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_info.dir/build.make yolo/CMakeFiles/six_region_info.dir/src/six_region_info.cpp.o
+.PHONY : src/six_region_info.cpp.o
 
-src/sixregion_map.i: src/sixregion_map.cpp.i
+src/six_region_info.i: src/six_region_info.cpp.i
 
-.PHONY : src/sixregion_map.i
+.PHONY : src/six_region_info.i
 
 # target to preprocess a source file
-src/sixregion_map.cpp.i:
-	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/sixregion_map.dir/build.make yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.i
-.PHONY : src/sixregion_map.cpp.i
+src/six_region_info.cpp.i:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_info.dir/build.make yolo/CMakeFiles/six_region_info.dir/src/six_region_info.cpp.i
+.PHONY : src/six_region_info.cpp.i
 
-src/sixregion_map.s: src/sixregion_map.cpp.s
+src/six_region_info.s: src/six_region_info.cpp.s
 
-.PHONY : src/sixregion_map.s
+.PHONY : src/six_region_info.s
 
 # target to generate assembly for a file
-src/sixregion_map.cpp.s:
-	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/sixregion_map.dir/build.make yolo/CMakeFiles/sixregion_map.dir/src/sixregion_map.cpp.s
-.PHONY : src/sixregion_map.cpp.s
+src/six_region_info.cpp.s:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_info.dir/build.make yolo/CMakeFiles/six_region_info.dir/src/six_region_info.cpp.s
+.PHONY : src/six_region_info.cpp.s
+
+src/six_region_map.o: src/six_region_map.cpp.o
+
+.PHONY : src/six_region_map.o
+
+# target to build an object file
+src/six_region_map.cpp.o:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_map.dir/build.make yolo/CMakeFiles/six_region_map.dir/src/six_region_map.cpp.o
+.PHONY : src/six_region_map.cpp.o
+
+src/six_region_map.i: src/six_region_map.cpp.i
+
+.PHONY : src/six_region_map.i
+
+# target to preprocess a source file
+src/six_region_map.cpp.i:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_map.dir/build.make yolo/CMakeFiles/six_region_map.dir/src/six_region_map.cpp.i
+.PHONY : src/six_region_map.cpp.i
+
+src/six_region_map.s: src/six_region_map.cpp.s
+
+.PHONY : src/six_region_map.s
+
+# target to generate assembly for a file
+src/six_region_map.cpp.s:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_map.dir/build.make yolo/CMakeFiles/six_region_map.dir/src/six_region_map.cpp.s
+.PHONY : src/six_region_map.cpp.s
+
+src/six_region_marker.o: src/six_region_marker.cpp.o
+
+.PHONY : src/six_region_marker.o
+
+# target to build an object file
+src/six_region_marker.cpp.o:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_marker.dir/build.make yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o
+.PHONY : src/six_region_marker.cpp.o
+
+src/six_region_marker.i: src/six_region_marker.cpp.i
+
+.PHONY : src/six_region_marker.i
+
+# target to preprocess a source file
+src/six_region_marker.cpp.i:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_marker.dir/build.make yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.i
+.PHONY : src/six_region_marker.cpp.i
+
+src/six_region_marker.s: src/six_region_marker.cpp.s
+
+.PHONY : src/six_region_marker.s
+
+# target to generate assembly for a file
+src/six_region_marker.cpp.s:
+	cd /home/extraction-ws/build && $(MAKE) -f yolo/CMakeFiles/six_region_marker.dir/build.make yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.s
+.PHONY : src/six_region_marker.cpp.s
 
 src/tf_broadcaster.o: src/tf_broadcaster.cpp.o
 
@@ -1220,7 +1262,8 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... sixregion_map"
+	@echo "... six_region_info"
+	@echo "... six_region_marker"
 	@echo "... yolo_genpy"
 	@echo "... tf_broadcaster"
 	@echo "... geometry_msgs_generate_messages_eus"
@@ -1254,11 +1297,11 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... six_marker"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... yolo_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_lisp"
+	@echo "... six_region_map"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_eus"
@@ -1285,12 +1328,15 @@ help:
 	@echo "... actionlib_generate_messages_py"
 	@echo "... yolo_generate_messages"
 	@echo "... yolo_generate_messages_nodejs"
-	@echo "... src/six_marker.o"
-	@echo "... src/six_marker.i"
-	@echo "... src/six_marker.s"
-	@echo "... src/sixregion_map.o"
-	@echo "... src/sixregion_map.i"
-	@echo "... src/sixregion_map.s"
+	@echo "... src/six_region_info.o"
+	@echo "... src/six_region_info.i"
+	@echo "... src/six_region_info.s"
+	@echo "... src/six_region_map.o"
+	@echo "... src/six_region_map.i"
+	@echo "... src/six_region_map.s"
+	@echo "... src/six_region_marker.o"
+	@echo "... src/six_region_marker.i"
+	@echo "... src/six_region_marker.s"
 	@echo "... src/tf_broadcaster.o"
 	@echo "... src/tf_broadcaster.i"
 	@echo "... src/tf_broadcaster.s"

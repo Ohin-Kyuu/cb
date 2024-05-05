@@ -285,17 +285,30 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named sixregion_map
+# Target rules for targets named six_region_info
 
 # Build rule for target.
-sixregion_map: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sixregion_map
-.PHONY : sixregion_map
+six_region_info: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 six_region_info
+.PHONY : six_region_info
 
 # fast build rule for target.
-sixregion_map/fast:
-	$(MAKE) -f yolo/CMakeFiles/sixregion_map.dir/build.make yolo/CMakeFiles/sixregion_map.dir/build
-.PHONY : sixregion_map/fast
+six_region_info/fast:
+	$(MAKE) -f yolo/CMakeFiles/six_region_info.dir/build.make yolo/CMakeFiles/six_region_info.dir/build
+.PHONY : six_region_info/fast
+
+#=============================================================================
+# Target rules for targets named six_region_marker
+
+# Build rule for target.
+six_region_marker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 six_region_marker
+.PHONY : six_region_marker
+
+# fast build rule for target.
+six_region_marker/fast:
+	$(MAKE) -f yolo/CMakeFiles/six_region_marker.dir/build.make yolo/CMakeFiles/six_region_marker.dir/build
+.PHONY : six_region_marker/fast
 
 #=============================================================================
 # Target rules for targets named yolo_genpy
@@ -714,19 +727,6 @@ visualization_msgs_generate_messages_eus/fast:
 .PHONY : visualization_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named six_marker
-
-# Build rule for target.
-six_marker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 six_marker
-.PHONY : six_marker
-
-# fast build rule for target.
-six_marker/fast:
-	$(MAKE) -f yolo/CMakeFiles/six_marker.dir/build.make yolo/CMakeFiles/six_marker.dir/build
-.PHONY : six_marker/fast
-
-#=============================================================================
 # Target rules for targets named tf_generate_messages_lisp
 
 # Build rule for target.
@@ -777,6 +777,19 @@ actionlib_generate_messages_lisp: cmake_check_build_system
 actionlib_generate_messages_lisp/fast:
 	$(MAKE) -f yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/build
 .PHONY : actionlib_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named six_region_map
+
+# Build rule for target.
+six_region_map: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 six_region_map
+.PHONY : six_region_map
+
+# fast build rule for target.
+six_region_map/fast:
+	$(MAKE) -f yolo/CMakeFiles/six_region_map.dir/build.make yolo/CMakeFiles/six_region_map.dir/build
+.PHONY : six_region_map/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_py
@@ -1138,7 +1151,8 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... sixregion_map"
+	@echo "... six_region_info"
+	@echo "... six_region_marker"
 	@echo "... yolo_genpy"
 	@echo "... tf_broadcaster"
 	@echo "... geometry_msgs_generate_messages_eus"
@@ -1171,11 +1185,11 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... six_marker"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... yolo_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_lisp"
+	@echo "... six_region_map"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_eus"

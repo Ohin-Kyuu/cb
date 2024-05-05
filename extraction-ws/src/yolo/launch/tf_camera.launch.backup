@@ -1,8 +1,11 @@
 <launch>
     <node pkg="yolo" type="tf_broadcaster" name="tf_broadcaster"
         args="tf_info"/> 
-    <node pkg="yolo" type="six_marker" name="six_marker"/>
-    <node pkg="yolo" type="sixregion_map" name="sixregion_map"/>
+
+    <node pkg="yolo" type="six_region_marker" name="six_region_marker"/>
+    <node pkg="yolo" type="six_region_map" name="six_region_map"/>
+    <node pkg="yolo" type="six_region_info" name="six_region_info"/>
+    
     <!--rviz -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find yolo)/rviz/Marker.rviz" />
 </launch>

@@ -136,9 +136,10 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory yolo
 
 # Recursive "all" directory target.
-yolo/all: yolo/CMakeFiles/sixregion_map.dir/all
+yolo/all: yolo/CMakeFiles/six_region_info.dir/all
+yolo/all: yolo/CMakeFiles/six_region_marker.dir/all
 yolo/all: yolo/CMakeFiles/tf_broadcaster.dir/all
-yolo/all: yolo/CMakeFiles/six_marker.dir/all
+yolo/all: yolo/CMakeFiles/six_region_map.dir/all
 yolo/all: yolo/CMakeFiles/yolo_generate_messages.dir/all
 
 .PHONY : yolo/all
@@ -149,7 +150,8 @@ yolo/preinstall:
 .PHONY : yolo/preinstall
 
 # Recursive "clean" directory target.
-yolo/clean: yolo/CMakeFiles/sixregion_map.dir/clean
+yolo/clean: yolo/CMakeFiles/six_region_info.dir/clean
+yolo/clean: yolo/CMakeFiles/six_region_marker.dir/clean
 yolo/clean: yolo/CMakeFiles/yolo_genpy.dir/clean
 yolo/clean: yolo/CMakeFiles/tf_broadcaster.dir/clean
 yolo/clean: yolo/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
@@ -182,11 +184,11 @@ yolo/clean: yolo/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
 yolo/clean: yolo/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 yolo/clean: yolo/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
 yolo/clean: yolo/CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
-yolo/clean: yolo/CMakeFiles/six_marker.dir/clean
 yolo/clean: yolo/CMakeFiles/tf_generate_messages_lisp.dir/clean
 yolo/clean: yolo/CMakeFiles/yolo_generate_messages_cpp.dir/clean
 yolo/clean: yolo/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 yolo/clean: yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
+yolo/clean: yolo/CMakeFiles/six_region_map.dir/clean
 yolo/clean: yolo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 yolo/clean: yolo/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 yolo/clean: yolo/CMakeFiles/actionlib_generate_messages_eus.dir/clean
@@ -461,31 +463,58 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target yolo/CMakeFiles/sixregion_map.dir
+# Target rules for target yolo/CMakeFiles/six_region_info.dir
 
 # All Build rule for target.
-yolo/CMakeFiles/sixregion_map.dir/all:
-	$(MAKE) -f yolo/CMakeFiles/sixregion_map.dir/build.make yolo/CMakeFiles/sixregion_map.dir/depend
-	$(MAKE) -f yolo/CMakeFiles/sixregion_map.dir/build.make yolo/CMakeFiles/sixregion_map.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=11,12 "Built target sixregion_map"
-.PHONY : yolo/CMakeFiles/sixregion_map.dir/all
+yolo/CMakeFiles/six_region_info.dir/all:
+	$(MAKE) -f yolo/CMakeFiles/six_region_info.dir/build.make yolo/CMakeFiles/six_region_info.dir/depend
+	$(MAKE) -f yolo/CMakeFiles/six_region_info.dir/build.make yolo/CMakeFiles/six_region_info.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=9,10 "Built target six_region_info"
+.PHONY : yolo/CMakeFiles/six_region_info.dir/all
 
 # Build rule for subdir invocation for target.
-yolo/CMakeFiles/sixregion_map.dir/rule: cmake_check_build_system
+yolo/CMakeFiles/six_region_info.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/extraction-ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/sixregion_map.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/six_region_info.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/extraction-ws/build/CMakeFiles 0
-.PHONY : yolo/CMakeFiles/sixregion_map.dir/rule
+.PHONY : yolo/CMakeFiles/six_region_info.dir/rule
 
 # Convenience name for target.
-sixregion_map: yolo/CMakeFiles/sixregion_map.dir/rule
+six_region_info: yolo/CMakeFiles/six_region_info.dir/rule
 
-.PHONY : sixregion_map
+.PHONY : six_region_info
 
 # clean rule for target.
-yolo/CMakeFiles/sixregion_map.dir/clean:
-	$(MAKE) -f yolo/CMakeFiles/sixregion_map.dir/build.make yolo/CMakeFiles/sixregion_map.dir/clean
-.PHONY : yolo/CMakeFiles/sixregion_map.dir/clean
+yolo/CMakeFiles/six_region_info.dir/clean:
+	$(MAKE) -f yolo/CMakeFiles/six_region_info.dir/build.make yolo/CMakeFiles/six_region_info.dir/clean
+.PHONY : yolo/CMakeFiles/six_region_info.dir/clean
+
+#=============================================================================
+# Target rules for target yolo/CMakeFiles/six_region_marker.dir
+
+# All Build rule for target.
+yolo/CMakeFiles/six_region_marker.dir/all:
+	$(MAKE) -f yolo/CMakeFiles/six_region_marker.dir/build.make yolo/CMakeFiles/six_region_marker.dir/depend
+	$(MAKE) -f yolo/CMakeFiles/six_region_marker.dir/build.make yolo/CMakeFiles/six_region_marker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=13,14 "Built target six_region_marker"
+.PHONY : yolo/CMakeFiles/six_region_marker.dir/all
+
+# Build rule for subdir invocation for target.
+yolo/CMakeFiles/six_region_marker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extraction-ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/six_region_marker.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extraction-ws/build/CMakeFiles 0
+.PHONY : yolo/CMakeFiles/six_region_marker.dir/rule
+
+# Convenience name for target.
+six_region_marker: yolo/CMakeFiles/six_region_marker.dir/rule
+
+.PHONY : six_region_marker
+
+# clean rule for target.
+yolo/CMakeFiles/six_region_marker.dir/clean:
+	$(MAKE) -f yolo/CMakeFiles/six_region_marker.dir/build.make yolo/CMakeFiles/six_region_marker.dir/clean
+.PHONY : yolo/CMakeFiles/six_region_marker.dir/clean
 
 #=============================================================================
 # Target rules for target yolo/CMakeFiles/yolo_genpy.dir
@@ -521,7 +550,7 @@ yolo/CMakeFiles/yolo_genpy.dir/clean:
 yolo/CMakeFiles/tf_broadcaster.dir/all:
 	$(MAKE) -f yolo/CMakeFiles/tf_broadcaster.dir/build.make yolo/CMakeFiles/tf_broadcaster.dir/depend
 	$(MAKE) -f yolo/CMakeFiles/tf_broadcaster.dir/build.make yolo/CMakeFiles/tf_broadcaster.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=13,14 "Built target tf_broadcaster"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=15,16 "Built target tf_broadcaster"
 .PHONY : yolo/CMakeFiles/tf_broadcaster.dir/all
 
 # Build rule for subdir invocation for target.
@@ -629,7 +658,7 @@ yolo/CMakeFiles/tf_generate_messages_nodejs.dir/clean:
 yolo/CMakeFiles/yolo_generate_messages_eus.dir/all: yolo/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f yolo/CMakeFiles/yolo_generate_messages_eus.dir/build.make yolo/CMakeFiles/yolo_generate_messages_eus.dir/depend
 	$(MAKE) -f yolo/CMakeFiles/yolo_generate_messages_eus.dir/build.make yolo/CMakeFiles/yolo_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=15 "Built target yolo_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=17 "Built target yolo_generate_messages_eus"
 .PHONY : yolo/CMakeFiles/yolo_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1352,33 +1381,6 @@ yolo/CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean:
 .PHONY : yolo/CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target yolo/CMakeFiles/six_marker.dir
-
-# All Build rule for target.
-yolo/CMakeFiles/six_marker.dir/all:
-	$(MAKE) -f yolo/CMakeFiles/six_marker.dir/build.make yolo/CMakeFiles/six_marker.dir/depend
-	$(MAKE) -f yolo/CMakeFiles/six_marker.dir/build.make yolo/CMakeFiles/six_marker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=9,10 "Built target six_marker"
-.PHONY : yolo/CMakeFiles/six_marker.dir/all
-
-# Build rule for subdir invocation for target.
-yolo/CMakeFiles/six_marker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extraction-ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/six_marker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extraction-ws/build/CMakeFiles 0
-.PHONY : yolo/CMakeFiles/six_marker.dir/rule
-
-# Convenience name for target.
-six_marker: yolo/CMakeFiles/six_marker.dir/rule
-
-.PHONY : six_marker
-
-# clean rule for target.
-yolo/CMakeFiles/six_marker.dir/clean:
-	$(MAKE) -f yolo/CMakeFiles/six_marker.dir/build.make yolo/CMakeFiles/six_marker.dir/clean
-.PHONY : yolo/CMakeFiles/six_marker.dir/clean
-
-#=============================================================================
 # Target rules for target yolo/CMakeFiles/tf_generate_messages_lisp.dir
 
 # All Build rule for target.
@@ -1485,6 +1487,33 @@ actionlib_generate_messages_lisp: yolo/CMakeFiles/actionlib_generate_messages_li
 yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/clean:
 	$(MAKE) -f yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
 .PHONY : yolo/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target yolo/CMakeFiles/six_region_map.dir
+
+# All Build rule for target.
+yolo/CMakeFiles/six_region_map.dir/all:
+	$(MAKE) -f yolo/CMakeFiles/six_region_map.dir/build.make yolo/CMakeFiles/six_region_map.dir/depend
+	$(MAKE) -f yolo/CMakeFiles/six_region_map.dir/build.make yolo/CMakeFiles/six_region_map.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extraction-ws/build/CMakeFiles --progress-num=11,12 "Built target six_region_map"
+.PHONY : yolo/CMakeFiles/six_region_map.dir/all
+
+# Build rule for subdir invocation for target.
+yolo/CMakeFiles/six_region_map.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extraction-ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 yolo/CMakeFiles/six_region_map.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extraction-ws/build/CMakeFiles 0
+.PHONY : yolo/CMakeFiles/six_region_map.dir/rule
+
+# Convenience name for target.
+six_region_map: yolo/CMakeFiles/six_region_map.dir/rule
+
+.PHONY : six_region_map
+
+# clean rule for target.
+yolo/CMakeFiles/six_region_map.dir/clean:
+	$(MAKE) -f yolo/CMakeFiles/six_region_map.dir/build.make yolo/CMakeFiles/six_region_map.dir/clean
+.PHONY : yolo/CMakeFiles/six_region_map.dir/clean
 
 #=============================================================================
 # Target rules for target yolo/CMakeFiles/rosgraph_msgs_generate_messages_py.dir

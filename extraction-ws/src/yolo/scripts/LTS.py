@@ -21,6 +21,7 @@ import threading
 # Define variables
 WEIGHT_PATH = "src/yolo/weight/new_cb.engine"
 VERBOSE = False  # YOLO verbose (showing detection output)
+MIN_PLANT_COUNT = 3  # Minimum number of plants in a region to be considered in the region
 
 six_region_map = {
     # "Region": [x1, x2, y1, y2]
@@ -58,13 +59,14 @@ class Node:
 
         ### Publisher ###
         # CB detection topic
-        self.pub = rospy.Publisher("/robot/objects/global_info", Int8MultiArray, queue_size=10)
-        self.six_plant_info = Int8MultiArray()
-        self.six_plant_info.data = [0] * 6
+        self.count_pub = rospy.Publisher("/cbcam/objects/six_region_count", Int8MultiArray, queue_size=10)
+        self.six_plant_count = Int8MultiArray()
+        self.six_plant_count.data = [0] * 6
+
         # GUI Publisher
-        self.yolo_result_pub = rospy.Publisher("/robot/objects/yolo_result", Image, queue_size=10)
+        self.yolo_result_pub = rospy.Publisher("/cbcam/objects/yolo_result", Image, queue_size=10)
         # Camera Point Publisher
-        self.camera_point_pub = rospy.Publisher("/robot/objects/camera_point", PointStamped, queue_size=10)
+        self.world_point_pub = rospy.Publisher("/cbcam/objects/world_point", PointStamped, queue_size=10)
         self.camera_point = PointStamped()
         self.camera_point.header.frame_id = "realsense_camera"
         self.camera_point.header.stamp = rospy.Time.now()
@@ -104,13 +106,16 @@ class Node:
             if self.col1_msg is not None and self.dep1_msg is not None:
                 color_img, depth_img = self.preprocess(self.col1_msg, self.dep1_msg)
 
+                # Reset plant count
+                self.six_plant_count.data = [0] * 6
+
                 # YOLO detection
                 results = self.model.predict(source=color_img, verbose=VERBOSE)
 
-                for object in results:
-                    self.results_img = object.plot()
+                for obj in results:
+                    self.results_img = obj.plot()
                     self.yolo_result_pub.publish(self.bridge.cv2_to_imgmsg(self.results_img, encoding="bgr8"))
-                    boxes = object.boxes
+                    boxes = obj.boxes
                     for box in boxes:
                         x1, y1, x2, y2 = map(int, box.xyxy[0])
                         pixel_x, pixel_y = round((x1 + x2) / 2), round((y1 + y2) / 2)
@@ -126,9 +131,8 @@ class Node:
                     log_thread.start()
                     self.yolo_thread_started = True
 
-                # Publish 6 plant info
-                self.pub.publish(self.six_plant_info)
-                self.six_plant_info.data = [0] * 6
+                # Publish 6 plant count
+                self.count_pub.publish(self.six_plant_count)
 
     def transform_coordinates(self, x, y, depth):
         self.camera_point.point.x = (depth * (x - 436.413) / 604.357) / 1000
@@ -141,7 +145,7 @@ class Node:
             world_point = tf2_geometry_msgs.do_transform_point(self.camera_point,
                                                                self.tf_buffer.lookup_transform('map', 'realsense_camera',
                                                                                                 rospy.Time(0)))
-            self.camera_point_pub.publish(world_point)
+            self.world_point_pub.publish(world_point)
             return world_point.point.x, world_point.point.y
 
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException) as ex:
@@ -149,10 +153,10 @@ class Node:
             return None
 
     def six_plant_info_check(self, x, y):
-        # if match the region, set the corresponding value to 1
+        # Count the number of plants
         for region, value in six_region_map.items():
             if (value[0] < x < value[1]) and (value[2] < y < value[3]):
-                self.six_plant_info.data[int(region) - 1] = 1
+                self.six_plant_count.data[int(region) - 1] += 1
 
 
 if __name__ == '__main__':

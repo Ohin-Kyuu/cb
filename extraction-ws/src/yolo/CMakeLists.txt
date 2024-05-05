@@ -120,6 +120,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${PROJECT_SOURCE_DIR}/config
 )
 
 ## Declare a C++ library
@@ -196,10 +197,15 @@ include_directories(
 
 add_executable(tf_broadcaster src/tf_broadcaster.cpp)
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
-add_executable(six_marker src/six_marker.cpp)
-target_link_libraries(six_marker ${catkin_LIBRARIES})
-add_executable(sixregion_map src/sixregion_map.cpp)
-target_link_libraries(sixregion_map ${catkin_LIBRARIES})
+
+add_executable(six_region_marker src/six_region_marker.cpp)
+target_link_libraries(six_region_marker ${catkin_LIBRARIES})
+
+add_executable(six_region_map src/six_region_map.cpp)
+target_link_libraries(six_region_map ${catkin_LIBRARIES})
+
+add_executable(six_region_info src/six_region_info.cpp)
+target_link_libraries(six_region_info ${catkin_LIBRARIES})
 #############
 ## Testing ##
 #############
