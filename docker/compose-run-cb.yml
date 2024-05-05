@@ -26,4 +26,4 @@ services:
       - /dev/bus/usb
     
     command: >
-      /bin/bash -ic "cd /home/startup/; ./entrypoint.sh --yellow"
+      /bin/bash -ic "cd /home/startup/; ./entrypoint.sh --blue"
