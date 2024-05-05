@@ -17,7 +17,7 @@ from threading import Thread, Event
 
 # Define variables
 WEIGHT_PATH = "src/yolo/weight/new_cb.engine"
-VERBOSE = True  # YOLO verbose (showing detection output)
+VERBOSE = False  # YOLO verbose (showing detection output)
 
 six_region_map = {
     # "Region": [x1, x2, y1, y2]
@@ -32,7 +32,7 @@ six_region_map = {
 
 class Node:
     def __init__(self):
-        rospy.init_node('CB_Server')
+        rospy.init_node("CB_Server")
 
         ### YOLO model ###
         self.model = YOLO(WEIGHT_PATH)
@@ -41,13 +41,13 @@ class Node:
 
         ### Publisher ###
         # CB detection topic
-        self.pub = rospy.Publisher('/robot/objects/global_info', Int8MultiArray, queue_size=10)
+        self.pub = rospy.Publisher("/robot/objects/global_info", Int8MultiArray, queue_size=10)
         self.six_plant_info = Int8MultiArray()
         self.six_plant_info.data = [0] * 6
         # GUI Publisher
-        self.yolo_result_pub = rospy.Publisher('/robot/objects/yolo_result', Image, queue_size=10)
+        self.yolo_result_pub = rospy.Publisher("/robot/objects/yolo_result", Image, queue_size=10)
         # Camera Point Publisher
-        self.camera_point_pub = rospy.Publisher('/robot/objects/camera_point', PointStamped, queue_size=10)
+        self.camera_point_pub = rospy.Publisher("/robot/objects/camera_point", PointStamped, queue_size=10)
         self.camera_point = PointStamped()
         self.camera_point.header.frame_id = "realsense_camera"
         self.camera_point.header.stamp = rospy.Time.now()

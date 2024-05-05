@@ -17,6 +17,9 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
+echo -e "Starting \e[1mRealsense\e[0m node ..."
+sleep 1
+
 cd /home/realsense-ws
 source devel/setup.bash
 

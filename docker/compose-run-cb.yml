@@ -25,5 +25,5 @@ services:
     devices:
       - /dev/bus/usb
     
-    command: bash
-      # /bin/bash -c "cd /home/startup/diff; ./diff-inspection.sh"
+    command: >
+      /bin/bash -ic "cd /home/startup/; ./entrypoint.sh --yellow"
