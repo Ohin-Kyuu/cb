@@ -14,6 +14,9 @@ from std_msgs.msg import Int8MultiArray
 import numpy as np
 from cv_bridge import CvBridge
 from threading import Thread, Event
+import sys
+import time
+import threading
 
 # Define variables
 WEIGHT_PATH = "src/yolo/weight/new_cb.engine"
@@ -29,6 +32,19 @@ six_region_map = {
     "6": [0.375, 0.625, 0.175, 0.425]
 }
 
+def log_same_line():
+    while not rospy.is_shutdown():
+        sys.stdout.write("\033[2J\033[H")
+        rospy.loginfo("Processing YOLO .  ")
+        time.sleep(1)
+        
+        sys.stdout.write("\033[F\033[K")
+        rospy.loginfo("Processing YOLO .. ")
+        time.sleep(1)
+        
+        sys.stdout.write("\033[F\033[K")
+        rospy.loginfo("Processing YOLO ...")
+        time.sleep(1)
 
 class Node:
     def __init__(self):
@@ -38,6 +54,7 @@ class Node:
         self.model = YOLO(WEIGHT_PATH)
         # self.model.fuse() # Fuse for speed
         self.results_img = None
+        self.yolo_thread_started = False
 
         ### Publisher ###
         # CB detection topic
@@ -85,7 +102,6 @@ class Node:
     def yolo(self):
         while rospy.is_shutdown() is False:
             if self.col1_msg is not None and self.dep1_msg is not None:
-                rospy.loginfo("Processing YOLO ...")
                 color_img, depth_img = self.preprocess(self.col1_msg, self.dep1_msg)
 
                 # YOLO detection
@@ -103,6 +119,12 @@ class Node:
                         world_x, world_y = self.transform_coordinates(pixel_x, pixel_y, depth)
                         # Check 6 plant info
                         self.six_plant_info_check(world_x, world_y)
+
+                if not self.yolo_thread_started:
+                    log_thread = threading.Thread(target=log_same_line)
+                    log_thread.daemon = True
+                    log_thread.start()
+                    self.yolo_thread_started = True
 
                 # Publish 6 plant info
                 self.pub.publish(self.six_plant_info)
