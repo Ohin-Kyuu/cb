@@ -9,7 +9,7 @@ if [ -n "$usb_info" ]; then
     device=$(echo $usb_info | awk '{print $4}' | tr -d ':')
     
     sudo_pw="jetson"
-    echo $sudo_pw | sudo -S ../system/usbreset /dev/bus/usb/$bus/$device
+    echo $sudo_pw | sudo -S $HOME/cb/system/usbreset /dev/bus/usb/$bus/$device
 else
     echo "No Intel Corp. device found."
 fi
