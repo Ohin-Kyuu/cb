@@ -64,7 +64,11 @@ yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noet
 yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/ros/wall_timer_options.h
 yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/rosconsole/macros_generated.h
 yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/std_msgs/ColorRGBA.h
+yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/std_msgs/Float32MultiArray.h
 yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/std_msgs/Header.h
+yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/std_msgs/Int8MultiArray.h
+yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/std_msgs/MultiArrayDimension.h
+yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/std_msgs/MultiArrayLayout.h
 yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/visualization_msgs/Marker.h
 yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/visualization_msgs/MarkerArray.h
 yolo/CMakeFiles/six_region_marker.dir/src/six_region_marker.cpp.o: /opt/ros/noetic/include/xmlrpcpp/XmlRpcDecl.h

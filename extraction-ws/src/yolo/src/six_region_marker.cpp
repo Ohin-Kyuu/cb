@@ -1,42 +1,56 @@
-#include <ros/ros.h>
-#include <geometry_msgs/PointStamped.h>
-#include <visualization_msgs/Marker.h>
-#include <visualization_msgs/MarkerArray.h>
+#include "ros/ros.h"
+#include "geometry_msgs/Point.h"
+#include "geometry_msgs/PointStamped.h"
+#include "visualization_msgs/Marker.h"
+#include "visualization_msgs/MarkerArray.h"
+#include "std_msgs/Float32MultiArray.h"
 #include <cmath>
 #include <chrono>
+#include <vector>
+#include <std_msgs/Int8MultiArray.h>
 
 class CameraPointListener {
 public:
     CameraPointListener() {
-        sub = nh.subscribe("/cbcam/objects/world_point", 10, &CameraPointListener::pointCallback, this);
+        sub = nh.subscribe("/cbcam/objects/world_point_array", 10, &CameraPointListener::pointCallback, this);
         pub = nh.advertise<visualization_msgs::MarkerArray>("/cbcam/objects/six_region_marker", 10);
-        timer = nh.createTimer(ros::Duration(1.0), &CameraPointListener::timerCallback, this); // 1 second timer
+        region_pub = nh.advertise<std_msgs::Int8MultiArray>("/cbcam/objects/six_region_counts", 10);
     }
 
-    void pointCallback(const geometry_msgs::PointStamped::ConstPtr& msg) {
-        bool foundSimilar = false;
-        int similarIndex = -1;
-        double similarityThreshold = 0.1;  
+    void pointCallback(const std_msgs::Float32MultiArray::ConstPtr& msg) {
+        markerArray.markers.clear();
+        
+        std_msgs::Int8MultiArray region_counts;
+        region_counts.data.resize(6, 0); // Initialize the region count array with zeros
 
-        for (int i = 0; i < markerArray.markers.size(); ++i) {
-            double distance = calculateDistance(markerArray.markers[i].pose.position, msg->point);
-            if (distance < similarityThreshold) {
-                foundSimilar = true;
-                similarIndex = i;
-                break;
+        std::vector<geometry_msgs::Point> world_points;
+        for (size_t i = 0; i < msg->data.size(); i += 3) {
+            geometry_msgs::Point point;
+            point.x = msg->data[i];
+            point.y = msg->data[i + 1];
+            point.z = msg->data[i + 2];
+            world_points.push_back(point);
+            
+            // Determine the region for each point and update the region count
+            int region = getRegion(point);
+            if (region >= 0 && region < 6) {
+                region_counts.data[region]++;
             }
         }
 
-        if (foundSimilar) {
-            markerArray.markers[similarIndex].pose.position = msg->point;
-        } else {
+        // Publish the region counts
+        region_pub.publish(region_counts);
+
+        // Publish the markers for visualization
+        for (size_t i = 0; i < world_points.size(); ++i) {
             visualization_msgs::Marker marker;
-            marker.header = msg->header;
-            marker.ns = "camera_points";
-            marker.id = markerArray.markers.size();
+            marker.header.frame_id = "map";
+            marker.header.stamp = ros::Time();
+            marker.ns = "world_points";
+            marker.id = i;
             marker.type = visualization_msgs::Marker::SPHERE;
             marker.action = visualization_msgs::Marker::ADD;
-            marker.pose.position = msg->point;
+            marker.pose.position = world_points[i];
             marker.pose.orientation.w = 1.0;
             marker.scale.x = marker.scale.y = marker.scale.z = 0.1;
             marker.color.r = 1.0;
@@ -47,33 +61,49 @@ public:
         pub.publish(markerArray);
     }
 
-    double calculateDistance(const geometry_msgs::Point& p1, const geometry_msgs::Point& p2) {
-        return std::sqrt(std::pow(p1.x - p2.x, 2) + std::pow(p1.y - p2.y, 2) + std::pow(p1.z - p2.z, 2));
-    }
+    int getRegion(const geometry_msgs::Point& point) {
+        // Define the regions as circles and check if the point is inside any of them
+        std::vector<geometry_msgs::Point> region_centers;
+        geometry_msgs::Point p1, p2, p3, p4, p5, p6;
+        p1.x = -0.5; p6.y = -0.3; p6.z = 0.0;
+        p2.x = -0.5; p5.y = 0.3; p5.z = 0.0;
+        p3.x = 0.0; p4.y = -0.5; p4.z = 0.0;
+        p4.x = 0.0; p3.y = 0.5; p3.z = 0.0;
+        p5.x = 0.5; p1.y = -0.3; p1.z = 0.0;
+        p6.x = 0.5; p2.y = 0.3; p2.z = 0.0; 
+        region_centers.push_back(p1);
+        region_centers.push_back(p2);
+        region_centers.push_back(p3);
+        region_centers.push_back(p4);
+        region_centers.push_back(p5);
+        region_centers.push_back(p6);
 
-    void timerCallback(const ros::TimerEvent&) {
-        markerArray.markers.clear(); // Clear marker array
-        pub.publish(markerArray);
+        
+        double radius = 0.13; // Define the radius of the circular regions
+
+        for (size_t i = 0; i < region_centers.size(); ++i) {
+            double distance_squared = pow(point.x - region_centers[i].x, 2) +
+                                      pow(point.y - region_centers[i].y, 2);
+            if (distance_squared <= pow(radius, 2)) {
+                return i; // Return the index of the region if the point is inside
+            }
+        }
+
+        return -1; // Return -1 if the point is not inside any region
     }
 
 private:
     ros::NodeHandle nh;
     ros::Subscriber sub;
     ros::Publisher pub;
-    ros::Timer timer;
+    ros::Publisher region_pub;
     visualization_msgs::MarkerArray markerArray;
 };
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "six_region_marker");
-
     CameraPointListener listener;
-
-    ros::Rate rate(10); // 10 Hz
-    while (ros::ok()) {
-        ros::spinOnce();
-        rate.sleep();
-    }
+    ros::spin();
 
     return 0;
 }

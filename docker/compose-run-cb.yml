@@ -8,15 +8,16 @@ services:
     privileged: true
     cpuset: "0-2"
     runtime: nvidia
+    shm_size: 2g
 
     volumes:
       - /dev/bus/usb:/dev/bus/usb
       - /tmp/.X11-unix:/tmp/.X11-unix
 
-      - ../extraction-ws:/home/extraction-ws
-      - ../realsense-ws:/home/realsense-ws
-      - ../startup:/home/startup
-      - ../system/.bashrc:/root/.bashrc:rw
+      - $HOME/cb/extraction-ws:/home/extraction-ws
+      - $HOME/cb/realsense-ws:/home/realsense-ws
+      - $HOME/cb/startup:/home/startup
+      - $HOME/cb/system/.bashrc:/root/.bashrc:rw
 
     environment:
       - DISPLAY=${DISPLAY}
@@ -24,6 +25,10 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=all
     devices:
       - /dev/bus/usb
-    
+    deploy:
+      resources:
+        limits:
+          memory: 10G
+          
     command: >
-      /bin/bash -ic "cd /home/startup/; ./entrypoint.sh --blue"
+      /bin/bash -ic "cd /home/startup/; ./entrypoint.sh --yellow"

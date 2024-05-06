@@ -8,6 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/extraction-ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH='/opt/ros/noetic/lib:/opt/ros/noetic/lib/aarch64-linux-gnu:/usr/local/cuda/lib64:/usr/local/cuda-10.2/targets/aarch64-linux/lib:/usr/lib/aarch64-linux-gnu/tegra/'
 export PWD='/home/extraction-ws/build'
 export ROSLISP_PACKAGE_DIRECTORIES='/home/extraction-ws/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/extraction-ws/src:$ROS_PACKAGE_PATH"

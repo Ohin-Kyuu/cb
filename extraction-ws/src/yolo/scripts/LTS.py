@@ -8,7 +8,7 @@ import tf2_geometry_msgs
 import rospy
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import PointStamped
-from std_msgs.msg import Int8MultiArray
+from std_msgs.msg import Float32MultiArray
 
 ## Other tools
 import numpy as np
@@ -19,19 +19,8 @@ import time
 import threading
 
 # Define variables
-WEIGHT_PATH = "src/yolo/weight/new_cb.engine"
+WEIGHT_PATH = "src/yolo/weight/new_cb_fp16.engine"
 VERBOSE = False  # YOLO verbose (showing detection output)
-MIN_PLANT_COUNT = 3  # Minimum number of plants in a region to be considered in the region
-
-six_region_map = {
-    # "Region": [x1, x2, y1, y2]
-    "1": [-0.625, -0.375, -0.425, -0.175],
-    "2": [-0.625, -0.375, 0.175, 0.425],
-    "3": [-0.125, 0.125, -0.625, -0.375],
-    "4": [-0.125, 0.125, 0.375, 0.625],
-    "5": [0.375, 0.625, -0.425, -0.175],
-    "6": [0.375, 0.625, 0.175, 0.425]
-}
 
 def log_same_line():
     while not rospy.is_shutdown():
@@ -58,15 +47,12 @@ class Node:
         self.yolo_thread_started = False
 
         ### Publisher ###
-        # CB detection topic
-        self.count_pub = rospy.Publisher("/cbcam/objects/six_region_count", Int8MultiArray, queue_size=10)
-        self.six_plant_count = Int8MultiArray()
-        self.six_plant_count.data = [0] * 6
-
         # GUI Publisher
         self.yolo_result_pub = rospy.Publisher("/cbcam/objects/yolo_result", Image, queue_size=10)
         # Camera Point Publisher
-        self.world_point_pub = rospy.Publisher("/cbcam/objects/world_point", PointStamped, queue_size=10)
+        self.world_point_array_pub = rospy.Publisher("/cbcam/objects/world_point_array", Float32MultiArray, queue_size=10)
+        self.world_points = []
+
         self.camera_point = PointStamped()
         self.camera_point.header.frame_id = "realsense_camera"
         self.camera_point.header.stamp = rospy.Time.now()
@@ -106,9 +92,6 @@ class Node:
             if self.col1_msg is not None and self.dep1_msg is not None:
                 color_img, depth_img = self.preprocess(self.col1_msg, self.dep1_msg)
 
-                # Reset plant count
-                self.six_plant_count.data = [0] * 6
-
                 # YOLO detection
                 results = self.model.predict(source=color_img, verbose=VERBOSE)
 
@@ -122,17 +105,16 @@ class Node:
                         depth = depth_img[pixel_y, pixel_x]
                         # Transform coordinates
                         world_x, world_y = self.transform_coordinates(pixel_x, pixel_y, depth)
-                        # Check 6 plant info
-                        self.six_plant_info_check(world_x, world_y)
+
+                        self.collect_world_points(world_x, world_y)
+
+                self.publish_world_points()
 
                 if not self.yolo_thread_started:
                     log_thread = threading.Thread(target=log_same_line)
                     log_thread.daemon = True
                     log_thread.start()
                     self.yolo_thread_started = True
-
-                # Publish 6 plant count
-                self.count_pub.publish(self.six_plant_count)
 
     def transform_coordinates(self, x, y, depth):
         self.camera_point.point.x = (depth * (x - 436.413) / 604.357) / 1000
@@ -145,19 +127,31 @@ class Node:
             world_point = tf2_geometry_msgs.do_transform_point(self.camera_point,
                                                                self.tf_buffer.lookup_transform('map', 'realsense_camera',
                                                                                                 rospy.Time(0)))
-            self.world_point_pub.publish(world_point)
             return world_point.point.x, world_point.point.y
 
         except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException) as ex:
             rospy.logerr("Transform error: %s", str(ex))
             return None
+        
+    def collect_world_points(self, world_x, world_y):
+        world_point = PointStamped()
+        world_point.header.frame_id = "map"
+        world_point.point.x = world_x
+        world_point.point.y = world_y
+        world_point.point.z = 0.0
 
-    def six_plant_info_check(self, x, y):
-        # Count the number of plants
-        for region, value in six_region_map.items():
-            if (value[0] < x < value[1]) and (value[2] < y < value[3]):
-                self.six_plant_count.data[int(region) - 1] += 1
+        self.world_points.append(world_point)
 
+    def publish_world_points(self):
+        world_point_array_msg = Float32MultiArray()
+
+        for point in self.world_points:
+            world_point_array_msg.data.append(point.point.x)
+            world_point_array_msg.data.append(point.point.y)
+            world_point_array_msg.data.append(point.point.z)
+
+        self.world_point_array_pub.publish(world_point_array_msg)
+        self.world_points.clear()
 
 if __name__ == '__main__':
     try:

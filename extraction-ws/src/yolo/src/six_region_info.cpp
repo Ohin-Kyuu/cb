@@ -1,7 +1,7 @@
 #include "six_region_info.h"
 
 SixRegion::SixRegion() {
-    sub_six_region_count = nh.subscribe("/cbcam/objects/six_region_count", 10, &SixRegion::sixRegionCountCallback, this);
+    sub_six_region_count = nh.subscribe("/cbcam/objects/six_region_counts", 10, &SixRegion::sixRegionCountCallback, this);
     pub_global_info = nh.advertise<std_msgs::Int8MultiArray>("/robot/objects/global_info", 10);
 }
 

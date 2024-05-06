@@ -14,9 +14,9 @@ services:
       - DISPLAY=${DISPLAY} 
 
     volumes:
-      - ../extraction-ws:/home/extraction-ws
-      - ../realsense-ws:/home/realsense-ws
-      - ../startup:/home/startup
+      - $HOME/cb/extraction-ws:/home/extraction-ws
+      - $HOME/cb/realsense-ws:/home/realsense-ws
+      - $HOME/cb/startup:/home/startup
 
     command: >
       /bin/bash -ic "
