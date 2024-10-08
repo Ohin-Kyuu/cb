@@ -325,13 +325,13 @@ GMock_DIR:PATH=GMock_DIR-NOTFOUND
 GTEST_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-GTEST_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libgtest.a
+GTEST_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgtest.a
 
 //Path to a library.
 GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
-GTEST_MAIN_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/libgtest_main.a
+GTEST_MAIN_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgtest_main.a
 
 //Path to a library.
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
@@ -368,13 +368,13 @@ Project_BINARY_DIR:STATIC=/home/extraction-ws/build
 Project_SOURCE_DIR:STATIC=/home/extraction-ws/src
 
 //Path to a library.
-RT_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/librt.so
+RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
 //Name of the computer/site where compile is being run
-SITE:STRING=univ
+SITE:STRING=dit-2024-10
 
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE

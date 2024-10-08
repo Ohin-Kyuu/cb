@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yellow_tf_info="0.225 1.13 1.44 -143 3 160 map realsense_camera 10"
+yellow_tf_info="0.225 1.125 1.44 -143 3 160 map realsense_camera 10"
 
 #Reset launch files
 echo "Resetting launch files ..."

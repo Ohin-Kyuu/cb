@@ -21,8 +21,6 @@ std_msgs/Float32MultiArray.h
 /home/extraction-ws/src/yolo/src/std_msgs/Float32MultiArray.h
 cmath
 -
-chrono
--
 vector
 -
 std_msgs/Int8MultiArray.h

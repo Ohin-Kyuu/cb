@@ -84,22 +84,22 @@ ddynamic_reconfigure__test_EXTERNAL_OBJECTS =
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: gtest/lib/libgtest.so
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/libroscpp.so
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/libpthread.so
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/libboost_chrono.so.1.71.0
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/librosconsole.so
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/librosconsole_log4cxx.so
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/libboost_regex.so.1.71.0
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/libroscpp_serialization.so
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/libxmlrpcpp.so
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/librostime.so
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/libboost_date_time.so.1.71.0
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /opt/ros/noetic/lib/libcpp_common.so
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/libboost_system.so.1.71.0
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/libboost_thread.so.1.71.0
-/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+/home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test: ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure-test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/realsense-ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/realsense-ws/devel/lib/ddynamic_reconfigure/ddynamic_reconfigure-test"
 	cd /home/realsense-ws/build/ddynamic_reconfigure && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ddynamic_reconfigure-test.dir/link.txt --verbose=$(VERBOSE)

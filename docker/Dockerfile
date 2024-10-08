@@ -1,5 +1,5 @@
 #Base Image
-FROM ohin112/l4t-ubuntu20-yolo:ultralytics-ros_noetic 
+FROM ohin112/rosentralytics:R2
 
 LABEL org.opencontainers.image.authors="ohin"
 
@@ -15,13 +15,13 @@ RUN git clone --branch kinetic-devel https://github.com/pal-robotics/ddynamic_re
 
 ### install and build dependencies
 RUN apt-get update && \
-    rosdep init && \
     rosdep update && \
     rosdep install --from-paths . --ignore-src -r -y && \
     cd .. && \
     /bin/bash -c 'source /opt/ros/$ROS_DISTRO/setup.bash; catkin_make' && \
     echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc \
-    && sudo rm -rf /var/lib/apt/lists/* 
+    && rm -rf /var/lib/apt/lists/* 
 
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y libc6-dev
 ENV SHELL /bin/bash
 SHELL ["/bin/bash","-ic"]

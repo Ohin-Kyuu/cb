@@ -15,7 +15,7 @@ private:
     ros::Publisher pub_global_info;
     std::vector<std::vector<int>> received_arrays;
     
-    const int min_plant_count = 3;  // Minimum number of plants in a region to be considered in the region
+    const int min_plant_count = 2;  // Minimum number of plants in a region to be considered in the region
     const int window_size = 5;  // Size of the sliding window
 
     void sixRegionCountCallback(const std_msgs::Int8MultiArray::ConstPtr& msg);

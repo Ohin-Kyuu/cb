@@ -15,12 +15,12 @@ int main(int argc, char** argv) {
 
         std::vector<geometry_msgs::Point> positions;
         geometry_msgs::Point p1, p2, p3, p4, p5, p6;
-        p1.x = 0.5; p1.y = -0.3; p1.z = 0.0;
-        p2.x = 0.5; p2.y = 0.3; p2.z = 0.0;
-        p3.x = 0.0; p3.y = 0.5; p3.z = 0.0;
-        p4.x = 0.0; p4.y = -0.5; p4.z = 0.0;
-        p5.x = -0.5; p5.y = 0.3; p5.z = 0.0;
-        p6.x = -0.5; p6.y = -0.3; p6.z = 0.0;
+        p5.x = 0.5; p5.y = -0.3; p5.z = 0.0;
+        p6.x = 0.5; p6.y = 0.3; p6.z = 0.0;
+        p4.x = 0.0; p4.y = 0.5; p4.z = 0.0;
+        p3.x = 0.0; p3.y = -0.5; p3.z = 0.0;
+        p2.x = -0.5; p2.y = 0.3; p2.z = 0.0;
+        p1.x = -0.5; p1.y = -0.3; p1.z = 0.0;
         positions.push_back(p1);
         positions.push_back(p2);
         positions.push_back(p3);

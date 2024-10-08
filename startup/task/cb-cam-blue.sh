@@ -5,7 +5,7 @@
 
 ### Default settings
 camera="cbcam"
-serial_no="215322075868"
+serial_no="215222079970"
 
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do

@@ -1,0 +1,26 @@
+services:
+  arucotag:
+    image: ohin112/rosentralytics:cb
+    container_name: cb_run
+    tty: true  
+    network_mode: host
+    privileged: true
+    cpuset: 0-3
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+      - $HOME/cb/extraction-ws:/home/extraction-ws
+      - $HOME/cb/realsense-ws:/home/realsense-ws
+      - $HOME/cb/startup:/home/startup
+
+    environment:
+      - DISPLAY=${DISPLAY} 
+      - ROS_MASTER_URI=http://192.168.3.13:11311
+      - ROS_IP=192.168.3.20
+
+    devices:
+      - /dev/bus/usb
+          
+    command: >
+      /bin/bash -c "cd /home/startup/; ./entrypoint.sh --blue"

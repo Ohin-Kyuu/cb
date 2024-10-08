@@ -5,7 +5,6 @@
 #include "visualization_msgs/MarkerArray.h"
 #include "std_msgs/Float32MultiArray.h"
 #include <cmath>
-#include <chrono>
 #include <vector>
 #include <std_msgs/Int8MultiArray.h>
 
@@ -35,42 +34,52 @@ public:
             int region = getRegion(point);
             if (region >= 0 && region < 6) {
                 region_counts.data[region]++;
+                addMarker(point, i / 3, true); // True for red
+            } else {
+                addMarker(point, i / 3, false); // False for white
             }
         }
 
         // Publish the region counts
         region_pub.publish(region_counts);
-
         // Publish the markers for visualization
-        for (size_t i = 0; i < world_points.size(); ++i) {
-            visualization_msgs::Marker marker;
-            marker.header.frame_id = "map";
-            marker.header.stamp = ros::Time();
-            marker.ns = "world_points";
-            marker.id = i;
-            marker.type = visualization_msgs::Marker::SPHERE;
-            marker.action = visualization_msgs::Marker::ADD;
-            marker.pose.position = world_points[i];
-            marker.pose.orientation.w = 1.0;
-            marker.scale.x = marker.scale.y = marker.scale.z = 0.1;
+        pub.publish(markerArray);
+    }
+
+    void addMarker(const geometry_msgs::Point& point, int id, bool isRed) {
+        visualization_msgs::Marker marker;
+        marker.header.frame_id = "map";
+        marker.header.stamp = ros::Time::now();
+        marker.ns = "world_points";
+        marker.id = id;
+        marker.type = visualization_msgs::Marker::SPHERE;
+        marker.action = visualization_msgs::Marker::ADD;
+        marker.pose.position = point;
+        marker.pose.orientation.w = 1.0;
+        marker.scale.x = marker.scale.y = marker.scale.z = 0.1;
+        if (isRed) {
             marker.color.r = 1.0;
             marker.color.a = 1.0;
-            markerArray.markers.push_back(marker);
+        } else {
+            marker.color.r = 1.0;
+            marker.color.g = 1.0;
+            marker.color.b = 1.0;
+            marker.color.a = 1.0;
         }
-
-        pub.publish(markerArray);
+        markerArray.markers.push_back(marker);
     }
 
     int getRegion(const geometry_msgs::Point& point) {
         // Define the regions as circles and check if the point is inside any of them
         std::vector<geometry_msgs::Point> region_centers;
         geometry_msgs::Point p1, p2, p3, p4, p5, p6;
-        p1.x = -0.5; p6.y = -0.3; p6.z = 0.0;
-        p2.x = -0.5; p5.y = 0.3; p5.z = 0.0;
-        p3.x = 0.0; p4.y = -0.5; p4.z = 0.0;
-        p4.x = 0.0; p3.y = 0.5; p3.z = 0.0;
-        p5.x = 0.5; p1.y = -0.3; p1.z = 0.0;
-        p6.x = 0.5; p2.y = 0.3; p2.z = 0.0; 
+        p1.x = -0.5; p1.y = -0.3; p1.z = 0.0; 
+        p2.x = -0.5; p2.y = 0.3; p2.z = 0.0;
+        p3.x = 0.0; p3.y = -0.5; p3.z = 0.0;
+        p4.x = 0.0; p4.y = 0.5; p4.z = 0.0;
+        p5.x = 0.5; p5.y = -0.3; p5.z = 0.0;
+        p6.x = 0.5; p6.y = 0.3; p6.z = 0.0;
+
         region_centers.push_back(p1);
         region_centers.push_back(p2);
         region_centers.push_back(p3);
@@ -78,12 +87,10 @@ public:
         region_centers.push_back(p5);
         region_centers.push_back(p6);
 
-        
-        double radius = 0.13; // Define the radius of the circular regions
+        const double radius = 0.15; // Define the radius of the circular regions
 
         for (size_t i = 0; i < region_centers.size(); ++i) {
-            double distance_squared = pow(point.x - region_centers[i].x, 2) +
-                                      pow(point.y - region_centers[i].y, 2);
+            double distance_squared = pow(point.x - region_centers[i].x, 2) + pow(point.y - region_centers[i].y, 2);
             if (distance_squared <= pow(radius, 2)) {
                 return i; // Return the index of the region if the point is inside
             }

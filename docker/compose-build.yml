@@ -1,10 +1,9 @@
-version: '3'
 services:
   ros1-main-program:
     build: 
       context: .  
       dockerfile: Dockerfile
-    image: ohin112/l4t-ubuntu20-yolo:cb
+    image: ohin112/rosentralytics:cb
     container_name: build
     tty: true
     privileged: true
@@ -17,7 +16,7 @@ services:
       - $HOME/cb/extraction-ws:/home/extraction-ws
       - $HOME/cb/realsense-ws:/home/realsense-ws
       - $HOME/cb/startup:/home/startup
-
+      
     command: >
       /bin/bash -ic "
       cd /home/extraction-ws 

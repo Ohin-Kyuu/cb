@@ -19,7 +19,7 @@ import time
 import threading
 
 # Define variables
-WEIGHT_PATH = "src/yolo/weight/new_cb_fp16.engine"
+WEIGHT_PATH = "src/yolo/weight/new_cb.pt"
 VERBOSE = False  # YOLO verbose (showing detection output)
 
 def log_same_line():
